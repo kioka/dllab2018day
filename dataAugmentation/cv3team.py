@@ -30,18 +30,18 @@ def getDataSet():
     train_labels = []
     
     # ファイルリスト取得
-    f = open('target.txt')
+    f = open('train_labels.txt')
     imgList = f.readline()
     
     for img in imgList:
         items = img.split(" ") 
         
         # 画像データの読み込
-        imgSrc = cv2.imread("train/" + item[0], 0)
+        imgSrc = cv2.imread("../sample/train_labels.txt" + items[0], 0)
         train_imgs.append(imgSrc)
         
         # クラスの読み込み
-        train_labels.append(item[1])
+        train_labels.append(items[1])
     
     return train_imgs,train_labels
 
